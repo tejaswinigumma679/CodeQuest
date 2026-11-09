@@ -1,0 +1,231 @@
+
+:root {
+    color-scheme: dark;
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --text: #f8fafc;
+    --muted: #cbd5e1;
+    --border: #475569;
+    --accent: #8b5cf6;
+    --accent-hover: #7c3aed;
+    --input-bg: #0f172a;
+    --button-text: #ffffff;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f1f5f9;
+    --surface: #ffffff;
+    --surface-hover: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: #cbd5e1;
+    --accent: #6d28d9;
+    --accent-hover: #5b21b6;
+    --input-bg: #ffffff;
+    --button-text: #ffffff;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    transition: background 0.25s, color 0.25s;
+}
+
+.form-card, .mission-card, .card,
+.dashboard-card, .empty, .mission-grid > div {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+p, label, .description, .heading p,
+.footer, .xp-total {
+    color: var(--muted);
+}
+
+h1, h2, h3, strong {
+    color: var(--text);
+}
+
+input, textarea, select {
+    background: var(--input-bg) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--muted);
+}
+
+button, .theme-toggle {
+    cursor: pointer;
+}
+
+.theme-toggle {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+    border-radius: 9px;
+}
+
+a {
+    transition: 0.2s;
+}
+
+
+/* =================================
+   CODEQUEST AUTHENTICATION PAGES
+   Login and Registration
+================================= */
+
+/* Authentication page layout */
+body.auth-page {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 100px 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Theme toggle button */
+body.auth-page .theme-toggle {
+    position: fixed;
+    top: 22px;
+    right: 28px;
+    width: auto;
+    margin: 0;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+/* Authentication card */
+.auth-page .container {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    padding: 38px;
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.auth-page .container h1 {
+    text-align: center;
+    color: var(--accent);
+    font-size: 32px;
+    margin: 0 0 12px;
+}
+
+/* Description */
+.auth-page .container p {
+    text-align: center;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Labels */
+.auth-page label {
+    display: block;
+    margin-top: 18px;
+    color: var(--text) !important;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Input fields */
+.auth-page input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px;
+    background: var(--input-bg) !important;
+    color: var(--text) !important;
+    font-size: 15px;
+    outline: none;
+}
+
+.auth-page input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15);
+}
+
+/* Submit buttons */
+.auth-page form button {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent) !important;
+    color: white !important;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-page form button:hover {
+    background: var(--accent-hover) !important;
+    transform: translateY(-1px);
+}
+
+/* Links */
+.auth-page .container a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-page .container a:hover {
+    text-decoration: underline;
+}
+
+/* Messages */
+.auth-page .container .message {
+    color: #ef4444 !important;
+    text-align: center;
+}
+
+.auth-page .container .success {
+    color: #16a34a !important;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    body.auth-page {
+        padding: 85px 15px 25px;
+    }
+
+    .auth-page .container {
+        padding: 28px 22px;
+    }
+
+    .auth-page .container h1 {
+        font-size: 27px;
+    }
+
+    body.auth-page .theme-toggle {
+        top: 15px;
+        right: 15px;
+    }
+}
